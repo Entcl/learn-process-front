@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .b1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        
+        .b2 {
+            height: 300px;
+            background-color: yellow;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var btn01 = document.getElementById("btn01");
+            var btn02 = document.getElementById("btn02");
+            var btn03 = document.getElementById("btn03");
+            var box = document.getElementById("box");
+
+            btn01.onclick = function() {
+                // box.className = "b2";
+                addClass(box, "b2");
+            };
+            btn02.onclick = function() {
+                removeClass(box, "b2");
+            };
+            btn03.onclick = function() {
+                toogleClass(box, "b2");
+            };
+
+            /* 
+			obj	对象
+			cn	参数
+            */
+            function addClass(obj, cn) {
+                if (!hasClass(box, cn)) {
+                    obj.className += " " + cn;
+                }
+            };
+
+            /* 
+			obj	对象
+			cn	参数
+            */
+            function removeClass(obj, cn) {
+                if (hasClass(box, cn)) {
+                    obj.className = obj.className.replace(cn, "");
+                }
+            };
+
+            /* 
+            obj	对象
+            cn	参数
+            */
+            function hasClass(obj, cn) {
+                var reg = new RegExp("\\b" + cn + "\\b");
+                console.log(reg);
+                // 检查属性节点中有没有cn
+                console.log(reg.test(obj.className));
+                return reg.test(obj.className);
+            };
+
+            /* 
+            obj	对象
+            cn	参数
+            */
+            function toogleClass(obj, cn) {
+                if (hasClass(obj, cn)) {
+                    removeClass(obj, cn);
+                } else {
+                    addClass(obj, cn);
+                }
+            };
+        };
+    </script>
+</head>
+
+<body>
+
+    <button id="btn01">点击按钮以后修改box的样式</button>
+    <button id="btn02">删除</button>
+    <button id="btn03">切换</button>
+
+    <br /><br />
+
+    <div id="box" class="b1"></div>
+</body>
+
+</html>

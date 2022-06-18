@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box1 {
+        height: 200px;
+        width: 200px;
+        background: red;
+    }
+</style>
+<script>
+    function getStyle(obj, name) {
+        if (window.getComputedStyle) {
+            return getComputedStyle(obj, null)[name];
+        } else {
+            return obj.currentStyle[name];
+        }
+    };
+    window.onload = function() {
+        var btn01 = document.getElementById("btn01");
+        var btn02 = document.getElementById("btn02");
+        var box1 = document.getElementById("box1");
+
+        btn01.onclick = function() {
+            // 仅ie支持
+            // alert(box1.currentStyle.width);
+            // var obj = getComputedStyle(box1, null);
+            var c = getStyle(box1, "width");
+            console.log(c);
+        };
+
+    };
+</script>
+
+<body>
+    <button id="btn01">aaa</button>
+    <div id="box1">
+
+    </div>
+</body>
+
+</html>

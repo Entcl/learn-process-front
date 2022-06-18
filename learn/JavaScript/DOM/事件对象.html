@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #areaDiv {
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+    }
+    
+    #msgDiv {
+        width: 300px;
+        height: 100px;
+        border: 1px solid red;
+    }
+</style>
+<script>
+    window.onload = function() {
+        var areaDiv = document.getElementById("areaDiv");
+        var msgDiv = document.getElementById("msgDiv");
+
+        // 无论如何都会传递参数
+        areaDiv.onmousemove = function(event) {
+            // alert(1);
+            // var x = event.screenX;
+            // var y = event.screenY;
+
+            // ie8不支持
+            // var x = event.clientX;
+            // var y = event.clientX;
+
+            // // 火狐不支持
+            // var x = window.event.clientX;
+            // var y = window.event.clientX;
+
+            // if (!event) {
+            //     event = window.event;
+            // }
+
+            event = event || window.event;
+            var x = event.clientX;
+            var y = event.clientX;
+            var p1 = document.getElementById("msgDivX");
+
+            // p1.innerHTML = "x:" + x + "y:" + y;
+            msgDiv.innerHTML = "x:" + x + "y:" + y;
+        }
+    }
+</script>
+
+<body>
+
+</body>
+<div id="areaDiv">
+
+</div>
+<div id="msgDiv">
+    <p id="msgDivX"></p>
+
+</div>
+
+</html>

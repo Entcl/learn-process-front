@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #info {
+        width: 400px;
+        height: 500px;
+        background: red;
+        overflow: auto;
+    }
+</style>
+<script>
+    window.onload = function() {
+        var info = document.getElementById("info");
+        var infoScollTop = info.scrollTop;
+        var infoHeight = info.scrollHeight;
+        // if (condition) {
+        //     var btn01 = document.getElementById("info");
+        //     var read = document.getElementById("read");
+
+        //     btn01.style.display = "none";
+        // }
+
+        var btn02 = document.getElementById("btn02");
+        // btn02.onclick = function() {
+        //     // alert(info.clientHeight);
+        //     // alert(info.scrollHeight);
+        //     if (info.scrollHeight - info.scrollTop == info.clientHeight) {
+        //         btn01.style.disable = "enable";
+        //     }
+        // }
+        info.onscroll = function() {
+            if (info.scrollHeight - info.scrollTop == info.clientHeight) {
+                // var read = document.getElementById("read");
+                var inputs = document.getElementsByTagName("input");
+                inputs[0].disabled = false;
+                inputs[1].disabled = false;
+                // console.log(read.style.disabled);
+                // console.log(111);
+            }
+        }
+    };
+</script>
+
+<body>
+    <P>asdsadsads</P>
+    <div id="info">
+        asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad
+        asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad
+        asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad
+        asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad
+        asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad
+        asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad
+        asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad asdsadsadsadsadsadsadsadsadsasadsad
+    </div>
+    <input type="checkbox" value="已阅读" disabled="disabled">我已阅读
+    <input type="button" disabled="disabled" value="提交"></button>
+    <button id="btn02">提交a</button>
+</body>
+
+</html>

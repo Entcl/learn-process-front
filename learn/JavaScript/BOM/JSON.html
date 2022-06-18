@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    /* JSON
+     *   -布尔值 null string num []  obj
+     */
+    // JSON对象
+    var jsonaa = '{"name":"abc","age":18,"sex":0}';
+    // JSON数组
+    var arra = '["hello",123,2,3,true]';
+
+    var aa = JSON.parse(jsonaa);
+    // console.log(aa);
+    // console.log(aa.name);
+
+    var bb = JSON.parse(arra);
+    console.log(bb);
+    console.log(bb[0]);
+
+    // js-------> JSON
+    var b = {
+        name: "aa",
+        age: 18,
+        sex: "nan"
+    };
+    var c = JSON.stringify(b)
+    console.log(c);
+</script>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box1 {
+        width: 100px;
+        height: 100px;
+        background: rebeccapurple;
+        position: absolute;
+    }
+</style>
+<script>
+    window.onload = function() {
+        var box1 = document.getElementById("box1");
+        document.onmousemove = function(event) {
+
+            //event = event || window.event;
+
+            // 页面滚动条有偏移
+            // var left = event.clientX;
+            // var top = event.clientY;
+            // var left = event.pageX;
+            // var top = event.pageY;
+
+            // var st = document.body.scrollTop || document.documentElement.scrollTop;
+            // console.log(st);
+            // var left = event.clientX;
+            // var top = event.clientY;
+            // box1.style.left = left + st + "px";
+            // box1.style.top = top + st + "px";
+        };
+    };
+</script>
+
+<body style="height: 1000px;">
+    <div id="box1">
+
+    </div>
+</body>
+
+</html>

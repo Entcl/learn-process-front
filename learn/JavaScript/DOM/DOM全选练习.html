@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    window.onload = function() {
+        var allaa = document.getElementById("allaa");
+
+        // 全选
+        var allCheck = document.getElementById("allCheck");
+
+        allCheck.onclick = function() {
+            var items = document.getElementsByName("items");
+
+            for (var i = 0; i < items.length; i++) {
+                items[i].checked = true;
+            }
+
+            allaa.checked = true;
+        };
+
+        // 全不选
+        var allNoCheck = document.getElementById("allNoCheck");
+
+        allNoCheck.onclick = function() {
+            var items = document.getElementsByName("items");
+
+            for (var i = 0; i < items.length; i++) {
+                items[i].checked = false;
+            }
+
+            allaa.checked = false;
+        };
+
+        // 反选
+        var reverse = document.getElementById("reverse");
+
+        reverse.onclick = function() {
+            var items = document.getElementsByName("items");
+
+            for (var i = 0; i < items.length; i++) {
+                items[i].checked = !items[i].checked;
+            }
+
+            for (var i = 0; i < items.length; i++) {
+                allaa.checked = true;
+                if (!items[i].checked) {
+                    allaa.checked = false;
+                    break;
+                }
+            }
+        };
+
+        // 提交
+        var tijiao = document.getElementById("tijiao");
+
+        tijiao.onclick = function() {
+            var items = document.getElementsByName("items");
+
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].checked == true) {
+
+                    alert(items[i].value);
+                }
+            }
+        };
+
+        // allaa
+        allaa.onclick = function() {
+            var items = document.getElementsByName("items");
+
+            console.log(this);
+
+            for (var i = 0; i < items.length; i++) {
+                // items[i].checked = allaa.checked;
+                items[i].checked = this.checked;
+            }
+        };
+
+        // 
+        var items = document.getElementsByName("items");
+        for (var i = 0; i < items.length; i++) {
+            items[i].onclick = function() {
+                allaa.checked = true;
+                for (var j = 0; j < items.length; j++) {
+                    if (!items[j].checked) {
+                        allaa.checked = false;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+<body>
+    aaaaaaaaaa？<input type="checkbox" name="" id="allaa">全选/全不选
+    <div style="flex: auto;">
+        <input type="checkbox" name="items" id="football" value="足球">足球
+        <input type="checkbox" name="items" id="basketball" value="篮球">篮球
+        <input type="checkbox" name="items" id="yumaoqiu" value="羽毛球">羽毛球
+        <input type="checkbox" name="items" id="pinpong" value="乒乓球">乒乓球
+    </div>
+    <input type="button" name="" id="allCheck" value="全选">
+    <input type="button" name="" id="allNoCheck" value="全不选">
+    <input type="button" name="" id="reverse" value="反选">
+    <input type="button" name="" id="tijiao" value="提交">
+</body>
+
+</html>

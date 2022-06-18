@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //  * 对象的分类：
+    // 	 * 	1.内建对象
+    // 	 * 		- 由ES标准中定义的对象，在任何的ES的实现中都可以使用
+    // 	 * 		- 比如：Math String Number Boolean Function Object....
+    // 	 * 
+    // 	 * 	2.宿主对象
+    // 	 * 		- 由JS的运行环境提供的对象，目前来讲主要指由浏览器提供的对象
+    // 	 * 		- 比如 BOM DOM
+    // 	 * 
+    // 	 * 	3.自定义对象
+    // 	 * 		- 由开发人员自己创建的对象
+
+    // .    []
+    // var obj = new Object();
+
+    // obj["123"] = "123"
+    // obj["nihao"] = "hello"
+    // var n = "nihao"
+    // console.log(obj[n])
+    // "xx" in obj
+    // 栈内存   堆内存
+
+    // var obj ={};
+
+    var obj = new Object();
+    obj.name = "123";
+    obj.sayName = function() {
+            console.log(obj.name)
+        }
+        // 匿名函数 方法
+    obj.sayName();
+</script>
+
+<body>
+
+</body>
+
+</html>

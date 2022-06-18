@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 委派给共同的祖先
+    window.onload = function() {
+
+        var btn = document.getElementById("btn");
+        btn.onclick = function() {
+            var ul = document.getElementById("ul");
+            var li = document.createElement("li");
+
+            li.innerHTML += "<a href='javascript:;'>超链接</a>"
+            ul.appendChild(li);
+        }
+
+        var allA = document.getElementsByTagName("a");
+        // for (var i = 0; i < allA.length; i++) {
+        //     allA[i].onclick = function() {
+        //         alert("a");
+        //     };
+        // };
+
+        ul.onclick = function(event) {
+            event = event || window.event;
+            console.log(event.target);
+            if (event.target.className === "link") {
+                console.log(111111);
+            }
+            // alert("ul");
+        };
+    };
+</script>
+
+<body>
+    <input type="button" id="btn" value="提交">
+    <ul id="ul" style="background:red;">
+        <li>
+            <p></p>
+        </li>
+        <li>
+            <a href="javascript:;" class="link">超链接</a>
+        </li>
+        <li>
+            <a href="javascript:;" class="link">超链接1</a>
+        </li>
+        <li>
+            <a href="javascript:;" class="link">超链接2</a>
+        </li>
+    </ul>
+</body>
+
+</html>

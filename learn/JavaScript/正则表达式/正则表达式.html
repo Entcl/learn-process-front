@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 新建对象     RegExp("表达式","匹配模式")
+    // i忽略大小写  g全局匹配
+    // typeof reg  return   reg
+    // var reg = new RegExp();
+
+    //是否含a 区分大小写
+    var reg = new RegExp("a", "i");
+
+
+    var str = "bbA";
+
+    var res = reg.test(str);
+    console.log(res);
+</script>
+
+<body>
+
+</body>
+
+</html>

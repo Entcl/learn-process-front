@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box1 {
+        width: 200px;
+        height: 200px;
+        background-color: #bfa;
+        /* border: 10px solid red; */
+        /* 轮廓 */
+        /* outline: 10px solid red; */
+    }
+    
+    .box2 {
+        width: 200px;
+        height: 200px;
+        background-color: #bbb;
+        /* border: 10px solid red; */
+        /* 轮廓 */
+        /* outline: 10px solid red; */
+    }
+    
+    .box1:hover {
+        /* 偏移量   x   y   模糊度*/
+        box-shadow: 50px 10px 30px burlywood;
+    }
+    
+    .box2:hover {
+        /* 左上    右上    右下    左下 */
+        /* border-radius: 50px 50px 50px 50px; */
+        /* x   y */
+        border-top-left-radius: 50px 100px;
+        border-bottom-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        border-radius: 50%;
+    }
+</style>
+
+<body>
+    <div class="box1">
+
+    </div>
+    <div class="box2">
+
+    </div>
+    <span>aaa</span>
+</body>
+
+</html>

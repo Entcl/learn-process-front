@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //6
+    var arr = ["活火山", "死火山", "山体滑坡", "山体滑坡1", "山体滑坡2", "山体滑坡3"];
+    // 左闭右开
+    // console.log(arr.slice(3, 5))
+    // 0 - 倒数第二
+    // console.log(arr.slice(0, -2))
+
+    console.log("arr1 = " + arr);
+    // 指定位置开始删除几个元素
+    // var res = arr.splice(0, 1, "大魔王", "aaa");
+    // 指定位置插入
+    var res = arr.splice(1, 0, "大魔王", "aaa");
+    console.log("arr2 = " + arr);
+
+    console.log("res = " + res);
+</script>
+
+<body>
+
+</body>
+
+</html>

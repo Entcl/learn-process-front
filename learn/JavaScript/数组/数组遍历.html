@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // var arr = ["活火山", "死火山", "山体滑坡"];
+    // for (var n in arr) {
+    //     console.log(arr[n]);
+    // }
+    // console.log("1");
+    // for (var i = 0; i < arr.length; i++) {
+    //     console.log(arr[i]);
+    // }
+
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // console.log(Person.prototype);
+
+    Person.prototype.toString = new function() {
+        return "Person[name = " + this.name + "age = " + this.age + "]";
+    };
+
+    var p1 = new Person("张三", 18);
+    var p2 = new Person("李四", 19);
+    var p3 = new Person("王五", 10);
+    var p4 = new Person("赵六", 21);
+    // console.log(p1);
+    // console.log(p2);
+    // console.log(p3);
+    // console.log(p4);
+
+    var perArr = [p1, p2, p3, p4];
+
+    function getAdult(arr) {
+        // var arr = new Array();
+        var newArr = [];
+
+        // 遍历
+        for (var i = 0; i < arr.length; i++) {
+            // console.log(arr[i]);
+            if (arr[i].age > 18) {
+                newArr.push(arr[i]);
+            }
+        }
+
+
+        return newArr;
+    }
+
+    var result = getAdult(perArr);
+    console.log(result);
+    console.log(typeof result)
+</script>
+
+<body>
+
+</body>
+
+</html>

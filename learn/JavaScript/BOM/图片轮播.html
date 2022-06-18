@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 子元素开启绝对定位父元素开启相对定位 */
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #imglist {
+        list-style: none;
+        position: absolute;
+        left: 0;
+    }
+    
+    #imglist li {
+        float: left;
+        /* 上下 左右 */
+        margin: 0 10px;
+    }
+    
+    #outer {
+        width: 520px;
+        height: 333px;
+        /* 上右下左 */
+        margin: 200px auto;
+        background-color: aquamarine;
+        padding: 10px 0;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    #navDiv {
+        position: absolute;
+        bottom: 15px;
+    }
+    
+    #navDiv a {
+        display: block;
+        float: left;
+        width: 20px;
+        height: 20px;
+        background-color: rebeccapurple;
+        margin-right: 10px;
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+    }
+    
+    #navDiv a:hover {
+        background-color: royalblue;
+    }
+</style>
+<script>
+    window.onload = function() {
+        var imglist = document.getElementById("imglist");
+        var imgArr = ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpg"];
+        // console.log(imgArr);
+        imglist.style.width = 520 * imgArr.length + "px";
+        var i = 0;
+        var outer = document.getElementById("outer");
+        var navDiv = document.getElementById("navDiv");
+
+        // console.log(outer.offsetWidth);
+        // console.log(navDiv.offsetWidth);
+
+        var allA = document.getElementsByTagName("a");
+        allA[i].style.backgroundColor = "royalblue";
+        for (var i = 0; i < allA.length; i++) {
+            allA[i].Id = i;
+            allA[i].onclick = function() {
+                index = this.Id;
+                // console.log(index);
+                imglist.style.left = 520 - 520 * (index + 1) + "px";
+                setA(index);
+            };
+        };
+        navDiv.style.left = (outer.offsetWidth - navDiv.offsetWidth) / 2 + "px";
+        setInterval(function() {
+            i++;
+            // console.log(i);
+            if (i > 5) {
+                i = 1;
+                imglist.style.left = 520 + "px";
+            }
+            setA(i - 1);
+            imglist.style.left = 520 - 520 * i + "px";
+        }, 1000);
+    }
+
+    var allA = document.getElementsByTagName("a");
+
+    function setA(index) {
+        for (var i = 0; i < allA.length; i++) {
+            allA[i].style.backgroundColor = "rebeccapurple";
+            allA[index].style.backgroundColor = "royalblue";
+        };
+    }
+</script>
+
+<body>
+    <div id="outer">
+        <ul id="imglist">
+            <li><img src="img/1.jpg" alt=""></li>
+            <li><img src="img/2.jpg" alt=""></li>
+            <li><img src="img/3.jpg" alt=""></li>
+            <li><img src="img/4.jpg" alt=""></li>
+            <li><img src="img/5.jpg" alt=""></li>
+        </ul>
+        <div id="navDiv">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </div>
+
+</body>
+
+</html>

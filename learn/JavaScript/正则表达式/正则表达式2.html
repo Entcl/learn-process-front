@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var str = "1a2b3c4d5e6f7a8A"
+
+    // var reg = /[A-z]/i;
+    var result = str.split(/[A-z]/i);
+    console.log(result);
+
+    // search()
+    // 搜索第一次出现的位置未找到返回-1
+
+    // match()
+    // result = str.match(/[A-z]/);
+    // console.log(result);
+    // result = str.match(/[A-z]/g);
+    // // result = str.match(/[A-z]/gi);
+    // console.log(result);
+
+    // replace()只替换第一个
+    // result = str.replace("a", "@@@");
+    // result = str.replace(/a|b/gi, "@@@");
+    result = str.replace(/a|b/gi, "");
+    console.log(result);
+</script>
+
+<body>
+
+</body>
+
+</html>

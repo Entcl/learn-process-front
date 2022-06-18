@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var arr = [1, 2, 3, 2, 1, 3, 3, 4, 2, 2, 5, 6, 7, 5, 5, 5, 8];
+    // console.log(arr);
+    // console.log("共：" + arr.length)
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = i + 1; j < arr.length; j++) {
+            // console.log(j)
+            if (arr[i] == arr[j]) {
+                arr.splice(j, 1);
+                j--;
+            }
+        }
+    }
+    console.log(arr);
+</script>
+
+<body>
+
+</body>
+
+</html>

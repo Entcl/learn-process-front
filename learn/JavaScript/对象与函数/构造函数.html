@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function Person(name, sex, gender) {
+        this.name = name;
+        this.sex = sex;
+        this.gender = gender;
+        this.sayName = function() {
+            alert(this.name);
+        }
+    }
+
+    var b = new Person();
+    var b1 = new Person("aa", "男", 18);
+
+    console.log(b);
+    console.log(b1);
+    //b1.sayName();
+</script>
+
+<body>
+
+</body>
+
+</html>

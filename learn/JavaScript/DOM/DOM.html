@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // document Object model
+    // 文档节点     标签节点    属性节点    文字节点
+
+    /*
+                nodename    nodetype    nodevalue  
+    文档节点    document    9           null
+    标签节点    div            1        null
+    属性节点    id              2       属性值
+    文字节点    text            3       文本值
+    */
+</script>
+
+<body>
+    <button id="btn">aaa</button>
+    <script>
+        var btn = document.getElementById("btn");
+        btn.innerHTML = "火山";
+    </script>
+</body>
+
+</html>

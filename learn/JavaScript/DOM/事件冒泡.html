@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box1 {
+        width: 300px;
+        height: 100px;
+        background-color: goldenrod;
+    }
+    
+    #s1 {
+        background-color: rgb(69, 146, 79);
+    }
+</style>
+<script>
+    window.onload = function() {
+        var s1 = document.getElementById("s1");
+        var box1 = document.getElementById("box1");
+        s1.onclick = function(event) {
+            event = event || window.event;
+            alert("s1");
+            // 取消事件冒泡
+            event.cancelBubble = true;
+        };
+        box1.onclick = function() {
+            alert("box1");
+        };
+        document.body.onclick = function() {
+            console.log("body");
+        };
+    };
+</script>
+
+<body>
+    <div id="box1">
+        box1
+        <span id="s1">span</span>
+    </div>
+</body>
+
+</html>

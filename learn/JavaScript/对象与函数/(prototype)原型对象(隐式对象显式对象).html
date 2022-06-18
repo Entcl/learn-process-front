@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function Person() {
+
+    }
+
+    Person.prototype.a = 123;
+    Person.prototype.sayHello = function() {
+        alert("yoo")
+    };
+
+    var p1 = new Person();
+
+    // console.log(Person.prototype);
+    // console.log(Person.prototype == p1.__proto__);
+    // console.log(Person.prototype == p1.prototype);
+    //console.log(p1.a);
+
+    // p1.sayHello();
+    //console.log("a" in p1);
+
+    console.log("1 " + p1.hasOwnProperty("b"))
+        // __prototype__隐式对象
+        //console.log("2" + p1.hasOwnProperty("__prototype__"))
+    p1.__proto__.b = 123;
+    console.log("2 " + p1.hasOwnProperty("__proto__"));
+    console.log(p1.__proto__.b);
+</script>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box1 {
+        width: 100px;
+        height: 100px;
+        background: black;
+        position: absolute;
+    }
+    
+    #box2 {
+        width: 200px;
+        height: 200px;
+        background: rgb(34, 168, 150);
+        position: absolute;
+    }
+</style>
+<script>
+    window.onload = function() {
+        var box1 = document.getElementById("box1");
+        var box2 = document.getElementById("box2");
+        drag(box1);
+        drag(box2);
+
+        return false;
+    }
+
+    function drag(obj) {
+        obj.onmousedown = function(event) {
+            // 拖拽搜索
+            // box1.setCapture();
+            obj.setCapture && obj.setCapture();
+            event = event || window.event;
+            var ol = event.clientX - obj.offsetLeft;
+            var ot = event.clientY - obj.offsetTop;
+            document.onmousemove = function(event) {
+                event = event || window.event;
+
+                var left = event.clientX - ol;
+                var top = event.clientY - ot;
+
+                obj.style.left = left + "px";
+                obj.style.top = top + "px";
+            }
+        }
+
+        document.onmouseup = function() {
+            document.onmousemove = null;
+
+            // document.onmouseup = null;
+            obj.releaseCapture && obj.releaseCapture();
+        }
+    }
+</script>
+
+<body>
+    <p>asda</p>
+
+    <div id="box2">
+
+    </div>
+    <div id="box1">
+
+    </div>
+</body>
+
+</html>
