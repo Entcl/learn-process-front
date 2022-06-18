@@ -1,9 +1,0 @@
-{
-    "name": "bing",
-    "url": "www2.bing.com",
-    "sites": [
-        { "name": "菜鸟教程", "url": "www.runoob.com", "chouchouchou": "ssss" },
-        { "name": "google", "url": "www.google.com" },
-        { "name": "微博", "url": "www.weibo.com" }
-    ]
-}
